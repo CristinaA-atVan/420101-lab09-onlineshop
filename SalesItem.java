@@ -16,7 +16,7 @@ public class SalesItem
 {
     private String name;
     private int price;  // in cents
-    private ArrayList<Comment> comments;
+    public ArrayList<Comment> comments;
     
     /**
      * Create a new sales item.

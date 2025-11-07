@@ -93,4 +93,19 @@ public class SalesItemTest
         assertEquals(false, salesIte1.addComment("Patricia Positive", "Amazing book!", 6));
         assertEquals(false, salesIte1.addComment("Nancy Negative", "Horrible book.", 0));
     }
+    
+    /**
+     * Checks if findMostHelpfulComment() works as intended.
+     * Answer to Question 19.
+     */
+    @Test
+    public void testFindMostHelpfulComment() {
+        SalesItem salesIte1 = new SalesItem("Dummy Item", 100);
+        salesIte1.addComment("Person A", "Very helpful review", 5);
+        salesIte1.upvoteComment(0);
+        salesIte1.addComment("Person B", "Average review", 3);
+        salesIte1.addComment("Person C", "Very horrible review", 1);
+        salesIte1.downvoteComment(2);
+        assertEquals(salesIte1.comments.get(0), salesIte1.findMostHelpfulComment());
+    }
 }
