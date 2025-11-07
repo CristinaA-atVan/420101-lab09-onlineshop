@@ -16,3 +16,6 @@ a test class that demonstrates some of the testing functionality. Testing is fur
 discussed in the book.
 
 NOTE: There are several serious errors to be found in these classes.
+
+14. A constructor, setUp() that occurs before the tests, and tearDown that occurs after the tests.
+17. You can double click (or click "show source") on a failed error to see the line of code that returns an error

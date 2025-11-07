@@ -69,4 +69,28 @@ public class SalesItemTest
         assertEquals("test name", salesIte1.getName());
         assertEquals(1000, salesIte1.getPrice());
     }
+    
+    /**
+     * Test that addCommment returns false if a comment from the same author exists.
+     * Answer to Question 15.
+     */
+    @Test
+    public void testDuplicateAuthor()
+    {
+        SalesItem salesIte1 = new SalesItem("How To Cook Eggs", 36699);
+        assertEquals(true, salesIte1.addComment("Eric Greggson", "Amazing guide, but the cost could be a lot lower.", 3));
+        assertEquals(false, salesIte1.addComment("Eric Greggson", "I wish the price was lower", 3));
+    }
+    
+    /**
+     * Check to see if 0 and 6 are invalid ratings.
+     * Answer to Question 16.
+     */
+    @Test
+    public void testBoundaries()
+    {
+        SalesItem salesIte1 = new SalesItem("Controversial Book", 198400);
+        assertEquals(false, salesIte1.addComment("Patricia Positive", "Amazing book!", 6));
+        assertEquals(false, salesIte1.addComment("Nancy Negative", "Horrible book.", 0));
+    }
 }
